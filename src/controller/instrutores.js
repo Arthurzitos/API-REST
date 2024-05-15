@@ -1,5 +1,4 @@
-const { instrutores } = require('../bancoDeDados.js');
-let { id_instrutor } = require('../bancoDeDados.js');
+let { instrutores, id_instrutor } = require('../bancoDeDados.js');
 
 const listarInstrutores = (req, res) => {
     return res.status(200).json(instrutores);
@@ -91,10 +90,29 @@ const atualizarStatusInstrutor = (req, res) => {
     return res.status(204).send();
 };
 
+const excluirInstrutor = (req, res) => {
+    const { id } = req.params;
+
+    const instrutor = instrutores.find( (instrutor) => {
+        return instrutor.id === Number(id);
+    });
+
+    if (!instrutor) {
+        return res.status(404).json( { message: 'Registro não encontrado ou já excluído' });
+    }
+
+    instrutores = instrutores.filter((instrutor) => {
+        return instrutor.id !== Number(id);
+    });
+
+    return res.status(204).send();
+};
+
 module.exports = {
     listarInstrutores,
     obterInstrutores,
     cadastrarInstrutor,
     atualizarInstrutor,
-    atualizarStatusInstrutor
+    atualizarStatusInstrutor,
+    excluirInstrutor
 };

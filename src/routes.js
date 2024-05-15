@@ -7,5 +7,6 @@ routes.get('/instrutores/:id', instrutores.obterInstrutores); // listar instruto
 routes.post('/instrutores', instrutores.cadastrarInstrutor); // cadastrar um instrutor
 routes.put('/instrutores/:id', instrutores.atualizarInstrutor); // atualizar todo o cadastro de um instrututor
 routes.patch('/instrutores/:id/status', instrutores.atualizarStatusInstrutor); // atualiza somente o status do instrutor
+routes.delete('/instrutores/:id', instrutores.excluirInstrutor) // axclui o registro de um instrutor
 
 module.exports = routes;
