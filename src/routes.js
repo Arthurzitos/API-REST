@@ -14,6 +14,8 @@ routes.delete('/instrutores/:id', instrutores.excluirInstrutor) // axclui o regi
 // Rotas referentes as aulas
 routes.post('/instrutores/:id_instrutor/aulas', aulas.cadastrarAula); // Cadastra uma nova aula para um instrutor específico.
 routes.get('/aulas', aulas.listarAulas); // lista todas as aulas cadastradas
+routes.get('/aulas/:id', aulas.obterAula); // lista todas as aulas cadastradas
+routes.get('/instrutores/:id_instrutor/aulas', aulas.obterAulasInstrutor);
 
 
 module.exports = routes;
