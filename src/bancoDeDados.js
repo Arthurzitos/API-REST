@@ -1,5 +1,6 @@
 const bancodedados = {
     id_instrutor: 3,
+    id_aula: 2,
 
     instrutores: [
         {
@@ -15,6 +16,15 @@ const bancodedados = {
             status: true
         },
     ],
+
+    aulas: [
+        {
+            id: 1,
+            instrutor_id: 1,
+            titulo: 'logica de programacao',
+            descricao: 'aula de logica para iniciantes em programacao'
+        }
+    ]
 };
 
 module.exports = bancodedados;
