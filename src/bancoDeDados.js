@@ -1,6 +1,6 @@
 const bancodedados = {
-    id_instrutor: 4,
-    
+    id_instrutor: 3,
+
     instrutores: [
         {
             id: 1,
